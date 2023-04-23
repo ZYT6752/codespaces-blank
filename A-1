@@ -1,0 +1,29 @@
+include<stdio.h>
+typedef struct Stu
+{
+	char name[20];
+	short age;
+	char number[12];
+	char sex[5];
+}Stu;//这里类型
+void print1(Stu t)
+{
+	printf("neme:%s\n",t.name);
+	printf("age:%d\n",t.age);
+	printf("number:%s\n",t.number);
+	printf("sex:%s\n",t.sex);
+}
+void print2(Stu *p)//方法2更好
+{
+	printf("neme:%s\n",p->name);
+	printf("age:%d\n",p->age);
+	printf("number:%s\n",p->number);
+	printf("sex:%s\n",p->sex);
+}
+int main(){
+	 Stu s1={"张三",20,"1234567890","男"};//局部变量
+	 struct Stu s2={"吴用",15,"1234567890","男"};
+	 print1(s1);
+	 print2(&s2);
+	return 0;
+}
